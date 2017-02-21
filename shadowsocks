@@ -1,0 +1,20 @@
+shadowsocks install ubuntu
+
+step1 
+sudo apt-get install python-pip
+sudo pip install shadowsocks
+sudo gedit /etc/shadowsocks.json
+
+{
+    "server":"服务器的ip",
+    "server_port":19175,
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "password":"密码",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open":false
+}
+
+sslocal -c /etc/shadowsocks.json &/usr/bin/google-chrome-stable --proxy-server="socks5://127.0.0.1:1080"
+
